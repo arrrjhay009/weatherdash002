@@ -21,10 +21,6 @@
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="./assets/css/style.css">
 
-    <!-- SCRIPT LINK -->
-    <script type="module" src="./assets/js/app.js"></script>
-    <script type="module" src="./assets/js/route.js"></script>
-
 </head>
 
 <body>
@@ -33,8 +29,8 @@
     <header class="header">
         <div class="container">
             
-            <a href="./index.html" class="logo">
-                <img src="./assets/images/logo.png" width="364" height="58" alt="logo">
+            <a href="#/weather?lat=15.4905045&lon=120.9684264" class="logo">
+                <img src="./assets/images/logo2.png" width="364" height="58" alt="logo">
             </a>
 
             <div class="search-view" data-search-view>
@@ -56,6 +52,10 @@
             <div class="header-actions">
                 <button class="icon-btn has-state" aria-label="open search" data-search-toggler>
                     <span class="m-icon">search</span>
+                </button>
+
+                <button class="fave-btn has-state" aria-label="favorite" data-favorite>
+                    <span class="m-icon">favorite</span>
                 </button>
 
                 <a href="#/current-location" class="btn-primary has-state" data-current-location-btn>
@@ -121,6 +121,12 @@
             <span class="span">Go Home</span>
         </a>
     </section>
+
+
+    
+    <!-- SCRIPT LINK -->
+    <script type="module" src="./assets/js/app.js"></script>
+    <script type="module" src="./assets/js/route.js"></script>
     
 </body>
 </html>

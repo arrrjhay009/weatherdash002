@@ -71,6 +71,7 @@ searchField.addEventListener("input", function () {
           toggleSearch();
           searchField.value = "";
           searchResult.classList.remove("active");
+          searchResult.innerHTML = "";
         });
       });
     }, searchTimeoutDuration);
@@ -124,7 +125,12 @@ export const updateWeather = function (lat, lon) {
     card.classList.add("card", "card-lg", "current-weather-card");
 
     card.innerHTML = `
+      <div class="now-card">
         <h2 class="title-2 card-title">Now</h2>
+        <button class="fave-btn has-state" aria-label="favorite" data-favorite>
+                    <span class="m-icon">favorite</span>
+        </button>
+      </div>
 
         <div class="wrapper">
             <p class="heading">${parseInt(temp)}&deg;<sup>c</sup></p>
@@ -179,21 +185,21 @@ export const updateWeather = function (lat, lon) {
 
                             <li class="card-item">
                                 <p class="title-1">${pm2_5.toPrecision(3)}</p>
-                                <p class="label-1">PM<sub>2.5</sub></p>
+                                <p class="aqi-label label-1" title="Particulate Matter">PM<sub>2.5</sub></p>
                             </li>
 
                             <li class="card-item">
                                 <p class="title-1">${so2.toPrecision(3)}</p>
-                                <p class="label-1">SO<sub>2</sub></p>
+                                <p class="aqi-label label-1" title="Sulfur Dioxide">SO<sub>2</sub></p>
                             </li>
 
                             <li class="card-item">
                                 <p class="title-1">${no2.toPrecision(3)}</p>
-                                <p class="label-1">NO<sub>2</sub></p>
+                                <p class="aqi-label label-1" title="Nitrogen Dioxide">NO<sub>2</sub></p>
                             </li>
                             <li class="card-item">
                                 <p class="title-1">${o3.toPrecision(3)}</p>
-                                <p class="label-1">O<sub>3</sub></p>
+                                <p class="aqi-label label-1" title="Ozone">O<sub>3</sub></p>
                             </li>
                         </ul>
                     </div>
